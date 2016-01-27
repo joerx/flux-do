@@ -22,6 +22,10 @@ function handleDispatch(store, payload) {
       store.create(payload.data.text)
       break
     case constants.ACTION_MARK_COMPLETE:
+      store.markComplete(payload.data.id)
+      break
+    case constants.ACTION_MARK_INCOMPLETE:
+      store.markIncomplete(payload.data.id)
       break
     default:
       // ignore
@@ -55,7 +59,14 @@ export default class TodoStore extends EventEmitter {
   }
 
   markComplete(id) {
+    console.info('TodoStore - mark item %s complete', id)
     this[_todos].get(id).status = constants.STATUS_DONE
+    emitChange(this, id)
+  }
+
+  markIncomplete(id) {
+    console.info('TodoStore - mark item %s incomplete', id)
+    this[_todos].get(id).status = constants.STATUS_OPEN
     emitChange(this, id)
   }
 

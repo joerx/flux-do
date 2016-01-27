@@ -2,6 +2,7 @@ export const VIEW_ACTION = 'view-action'
 
 export const ACTION_CREATE = 'action-create'
 export const ACTION_MARK_COMPLETE = 'action-mark-complete'
+export const ACTION_MARK_INCOMPLETE = 'action-mark-incomplete'
 
 export const EVT_CHANGE = 'change'
 export const EVT_CREATE = 'create'
