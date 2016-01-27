@@ -7,6 +7,6 @@ the code is written from scratch.
 
 ```sh
 npm install 
-npm run watch & // run build
-npm run sync // browsersync
+npm run watch & # run build
+npm run sync # browsersync
 ```
