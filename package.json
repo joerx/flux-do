@@ -1,0 +1,40 @@
+{
+  "name": "flux-do",
+  "version": "1.0.0",
+  "description": "React TODO Tutorial",
+  "main": "public/js/index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.0",
+    "flux": "^2.1.1",
+    "mocha": "^2.3.4",
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6",
+    "uniqid": "^1.0.0",
+    "watchify": "^3.7.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sync": "browser-sync start --server public/ --files 'public/dist/*.js, public/**/*.html, public/style/*.css'",
+    "watch": "watchify public/js/*.js -v -o public/dist/bundle.js --debug -t [ babelify --presets [ es2015 react] ]"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Jörg Henning <henning.joerg@gmail.com>",
+  "license": "ISC",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/joerx/flux-do.git"
+  },
+  "bugs": {
+    "url": "https://github.com/joerx/flux-do/issues"
+  },
+  "homepage": "https://github.com/joerx/flux-do#readme"
+}
