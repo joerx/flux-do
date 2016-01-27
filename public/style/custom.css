@@ -1,0 +1,18 @@
+#app {
+  padding: 0 15px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.title {
+  color: #0E1D32;
+}
+
+.done {
+  text-decoration: line-through;
+  color: #ccc;
+}
+
+[type=checkbox]:checked+.checkable:after {
+  color: #ccc;
+}

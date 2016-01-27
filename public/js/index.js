@@ -7,7 +7,7 @@ import TodoApp from './todo-app'
 
 let store = new TodoStore(appDispatcher)
 
-store.create('get some awesome shit done!')
+store.create('Get some awesome shit done!')
 
 render(
   <TodoApp todoStore={store} />,

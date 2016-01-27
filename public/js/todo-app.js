@@ -18,13 +18,15 @@ export default class TodoApp extends React.Component {
   render() {
     return (
       <div>
-        <h1>TODO List</h1>
+        <h3 className="title">flux-do</h3>
         <TodoList 
           todoStore={this.props.todoStore} 
           onItemCheck={item => this._markItemComplete(item)}
           onItemUncheck={item => this._markItemIncomplete(item)}
         />
-        <TodoInput onSave={(e) => this._saveItem(e)} />
+        <div className="row">
+          <TodoInput onSave={(e) => this._saveItem(e)} />
+        </div>
       </div>
     )
   }
@@ -69,7 +71,7 @@ class TodoList extends React.Component {
     })
 
     return (
-      <ul>{todoNodes}</ul>
+      <div>{todoNodes}</div>
     )
   }
 
@@ -102,14 +104,21 @@ class TodoItem extends React.Component {
   }
 
   render() {
-    return (<li>
-      <input 
-        type="checkbox" 
-        onChange={e => this._checkBoxChange(e)} 
-        checked={this.state.checked} 
-      />
-      {this.state.text}
-    </li>)
+    let className = 'checkable ' + (this.state.checked ? 'done' : 'open')
+    return (
+      <div className="row">
+        <label>
+          <input 
+            type="checkbox" 
+            onChange={e => this._checkBoxChange(e)} 
+            checked={this.state.checked} 
+          />
+          <span className={className}>
+          {this.state.text}
+          </span>
+        </label>
+      </div>
+    )
   }
 
   _checkBoxChange(e) {
@@ -134,7 +143,7 @@ class TodoInput extends React.Component {
 
   render() {
     return (<input
-      placeholder='enter something'
+      placeholder='Type something, then press <Enter>'
         onChange={e => this._onChange(e)}
         onKeyDown={e => this._onKeyDown(e)}
         value={this.state.value}
